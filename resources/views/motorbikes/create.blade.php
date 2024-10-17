@@ -1,24 +1,23 @@
 @extends('layout')
 
 @section('content')
-    <h1>Create a new Motorbike</h1>
+<h1><label class="jc">JC</label> Motorbikes <label class="redirect"><a href="{{route('motorbikes.index')}}">Back to the list</a></label></h1>
+    <div class="content">
+        <h2>Create a new motorbike: </h2>
     <form method="POST" action="{{route('motorbikes.store')}}">
         @csrf
         <div class="form-group">
-            <label for="model">Model</label>
-            <input type="text" name="model" class="form-control" id="model" placeholder="Enter motorbike model">
+            <input type="text" name="model" class="form-control" id="model" placeholder="Motorbike model">
         </div>
 
         <div class="form-group">
-            <label for="cylinderCap">Cylinder capacity</label>
-            <input type="text" name="cylinderCap" class="form-control" id="cylinderCap" placeholder="Enter cylinder capacity">
+            <input type="text" name="cylinderCap" class="form-control" id="cylinderCap" placeholder="Cylinder Capacity">
         </div>
 
         <div class="form-group">
-            <label for="model">Color</label>
-            <input type="text" name="color" class="form-control" id="color" placeholder="Enter motorbike color">
+            <input type="text" name="color" class="form-control" id="color" placeholder="Color">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="submit">Create</button>
     </form>
-    <a href="{{route('motorbikes.index')}}">Back to the list</a>
+    </div>
 @endsection
